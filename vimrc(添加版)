@@ -1,0 +1,19 @@
+set nu
+set ai
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+
+nmap <silent> <C-S> :w<CR>
+vmap <silent> <C-S> <Esc><C-S>gv
+imap <silent> <C-S> <Esc><C-S>
+
+imap <F9> <Esc>:!g++ -o %< % -g -O2 -Wall <Enter>
+
+map <F9> :!g++ -o %< % -g -O2 -Wall <Enter>
+
+map <F10> :!./%< <Enter>
+
+map <F5> :!gdb ./%< <Enter>
+
+map <C-Q> :!rm -rf .%.swp <Enter>
