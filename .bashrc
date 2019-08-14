@@ -19,4 +19,11 @@ if __has_command "git"; then
 	alias gcm='git commit'
 fi
 
+for __i in "vim" "nvim" "vim.gtk3" "gvim"; do
+	if __has_command "$i"; then
+		alias v="$i"
+		alias vdf="$i -d"
+	fi
+done
+
 unset __has_command
