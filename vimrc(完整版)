@@ -64,17 +64,62 @@ set ai
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
+set mouse=a
+set autochdir
+set nocompatible
+filetype plugin on
+set nocompatible
+set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ [%{(&fenc==\"\"?&enc:&fenc).(&bomb?\",BOM\":\"\")}]\ %c:%l/%L%)
+
 
 nmap <silent> <C-S> :w<CR>
 vmap <silent> <C-S> <Esc><C-S>gv
 imap <silent> <C-S> <Esc><C-S>
 
-imap <F9> <Esc>:!g++ -o %< % -g -O2 -Wall <Enter>
+imap <F9> <Esc>:!g++ -o %< % -g -lm -O2 -std=c++11 <Enter>
 
-map <F9> :!g++ -o %< % -g -O2 -Wall <Enter>
+map <F9> :!g++ -o %< % -g -lm -O2 -std=c++11 <Enter>
 
 map <F10> :!./%< <Enter>
 
 map <F5> :!gdb ./%< <Enter>
 
 map <C-Q> :!rm -rf .%.swp <Enter>
+
+map <F1> :NERDTreeToggle <Enter>
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'chxuan/vimplus-startify'                 " 启动界面
+Plug 'scrooloose/nerdtree'                     " 目录树
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " 目录树美化
+Plug 'vim-airline/vim-airline'                 " 状态栏美化
+Plug 'vim-airline/vim-airline-themes'          " 状态栏美化主题
+Plug 'tpope/vim-commentary'                    " 快速注释
+Plug 'scrooloose/syntastic'                    " 语法错误提示
+Plug 'luochen1990/rainbow'                     " 彩虹括号
+
+call plug#end()
+
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+\	'guis': [''],
+\	'cterms': [''],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	
+\}
+
+if filereadable(expand($HOME . '/.vimrc.nerdtree'))
+    let NERDTreeShowBookmarks=1                             " 自动开启书签栏
+	let g:NERDTreeFileExtensionHighlightFullName = 1
+	let g:NERDTreeExactMatchHighlightFullName = 1
+	let g:NERDTreePatternMatchHighlightFullName = 1
+	let g:NERDTreeHighlightFolders = 1         
+	let g:NERDTreeHighlightFoldersFullName = 1 
+	let g:NERDTreeDirArrowExpandable='▷'
+	let g:NERDTreeDirArrowCollapsible='▼'
+endif
