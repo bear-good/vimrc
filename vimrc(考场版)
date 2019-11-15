@@ -4,8 +4,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set mouse=a
-set nocompatible
-filetype plugin on
 
 imap <C-s> <Esc>:w! <Enter>
 map <C-s> :w! <Enter>
