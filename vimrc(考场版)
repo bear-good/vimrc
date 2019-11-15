@@ -8,9 +8,9 @@ set mouse=a
 imap <C-s> <Esc>:w! <Enter>
 map <C-s> :w! <Enter>
 
-imap <F9> <Esc>:!g++ -o %< % -g -lm -O2 -std=c++11 <Enter>
+imap <F9> <Esc>:!g++ % -o %< -g  <Enter>
 
-map <F9> :!g++ -o %< % -g -lm -O2 -std=c++11 <Enter>
+map <F9> :!g++ % -o %< -g  <Enter>
 
 map <F10> :!./%< <Enter>
 
