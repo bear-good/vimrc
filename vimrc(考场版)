@@ -1,0 +1,33 @@
+set nu
+set ai
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set mouse=a
+set nocompatible
+filetype plugin on
+
+imap <C-s> <Esc>:w! <Enter>
+map <C-s> :w! <Enter>
+
+imap <F9> <Esc>:!g++ -o %< % -g -lm -O2 -std=c++11 <Enter>
+
+map <F9> :!g++ -o %< % -g -lm -O2 -std=c++11 <Enter>
+
+map <F10> :!./%< <Enter>
+
+map <F5> :!gdb ./%< <Enter>
+
+map <C-Q> :!rm -rf .%.swp <Enter>
+
+map <F1> :NERDTreeToggle <Enter>
+
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'chxuan/vimplus-startify'                 " 启动界面
+Plug 'scrooloose/nerdtree'                     " 目录树
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " 目录树美化
+Plug 'scrooloose/syntastic'                    " 语法错误提示
+
+call plug#end()
