@@ -39,19 +39,21 @@ Plug 'vim-airline/vim-airline-themes'          " 状态栏美化主题
 Plug 'tpope/vim-commentary'                    " 快速注释
 Plug 'scrooloose/syntastic'                    " 语法错误提示
 Plug 'luochen1990/rainbow'                     " 彩虹括号
+Plug 'suan/vim-instant-markdown'               " markdown 实时预览
+
 
 call plug#end()
 
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
-\	'guis': [''],
-\	'cterms': [''],
-\	'operators': '_,_',
-\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-\	
-\}
+"let g:rainbow_active = 1
+"let g:rainbow_conf = {
+"\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+"\	'ctermfgs': ['lightblue', 'lightyellow', 'lightcyan', 'lightmagenta'],
+"\	'guis': [''],
+"\	'cterms': [''],
+"\	'operators': '_,_',
+"\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+"\	
+"\}
 
 if filereadable(expand($HOME . '/.vimrc.nerdtree'))
     let NERDTreeShowBookmarks=1                             " 自动开启书签栏
