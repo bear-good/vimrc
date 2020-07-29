@@ -53,8 +53,6 @@ if filereadable("/etc/vim/vimrc.local")
   source /etc/vim/vimrc.local
 endif
 
-
-
 set nu
 set ai
 set tabstop=4
@@ -93,7 +91,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight' " 目录树美化
 Plug 'vim-airline/vim-airline'                 " 状态栏美化
 Plug 'vim-airline/vim-airline-themes'          " 状态栏美化主题
 Plug 'tpope/vim-commentary'                    " 快速注释
-Plug 'scrooloose/syntastic'                    " 语法错误提示
+Plug 'dense-analysis/ale'                      " 语法错误提示
 Plug 'luochen1990/rainbow'                     " 彩虹括号
 Plug 'suan/vim-instant-markdown'               " markdown 实时预览
 
