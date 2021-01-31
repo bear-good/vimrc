@@ -27,6 +27,8 @@ map <C-Q> :!rm -rf .%.swp <Enter>
 
 map <F1> :NERDTreeToggle <Enter>
 
+map <C-A> (v)
+
 map <C-Z> u <Enter>
 
 call plug#begin('~/.vim/plugged')
