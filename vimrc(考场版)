@@ -17,3 +17,5 @@ map <F10> :!./%< <Enter>
 map <F5> :!gdb ./%< <Enter>
 
 map <C-Q> :!rm -rf .%.swp <Enter>
+
+map <C-Z> u <Enter>
